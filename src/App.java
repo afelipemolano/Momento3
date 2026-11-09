@@ -38,14 +38,25 @@ public class App {
                     break;
 
                 case 2 :
-                     System.out.println("  BUSCAR REFERENCIA ");
-                     System.out.println("Qué prenda deseas buscar?");
-                     String buscada = sc.nextLine();
-                     boolean existe = buscarReferencia(referencias, buscada); 
+                    System.out.println("\n--- BUSCAR REFERENCIA ---");
+                        System.out.print("Ingrese la palabra a buscar: ");
+                        String buscada = sc.nextLine();
 
-                     if ()
-                    break;
-                
+                        boolean encontrada = false;
+                        System.out.println("Resultados encontrados:");
+
+                        for (String prenda : referencias) {
+                            if (prenda != null && prenda.toLowerCase().contains(buscada.toLowerCase())) {
+                                System.out.println("- " + prenda);
+                                encontrada = true;
+                            }
+                        }
+
+                        if (!encontrada) {
+                            System.out.println("No se encontraron coincidencias para '" + buscada + "'.");
+                        }
+                        break;
+
                 case 3:
                     System.out.println("\n  AGREGAR REFERENCIA  ");
                     System.out.print("Ingrese el nombre de la nueva prenda: ");
@@ -87,12 +98,12 @@ public class App {
     public static boolean buscarReferencia(String[] arreglo, String nombreRef) {
         for (String ref : arreglo) {
             if (ref != null) {
-                if (ref.equalsIgnoreCase(nombreRef)) {
+                if (ref.toLowerCase().contains(nombreRef.toLowerCase())) {
                     return true;
                 }
             }
         }
         return false;
-
+    }
         
 }
