@@ -27,7 +27,7 @@ public class App {
 
             switch (opcion) {
                 case 1 :
-                    System.out.println(" \n  REFERENCIAS \n ");
+                    System.out.println(" \n  LISTA DE REFERENCIAS \n ");
                     int cont =1;
                     for (String prenda : referencias){
                         if (prenda != null) {
@@ -36,12 +36,40 @@ public class App {
                         }
                     }
                     break;
+
                 case 2 :
-                     System.out.println("");
+                     System.out.println("  BUSCAR REFERENCIA ");
+                     System.out.println("Qué prenda deseas buscar?");
+                     String buscada = sc.nextLine();
+                     boolean existe = buscarReferencia(referencias, buscada); 
+
+                     if ()
                     break;
-                case 3 :
-                     System.out.println("");
+                
+                case 3:
+                    System.out.println("\n  AGREGAR REFERENCIA  ");
+                    System.out.print("Ingrese el nombre de la nueva prenda: ");
+                    String nuevaPrenda = sc.nextLine();
+
+                    boolean insertado = false;
+
+                    // Recorremos con un for tradicional para poder modificar la posición del arreglo
+                    for (int i = 0; i < referencias.length; i++) {
+                        if (referencias[i] == null) {
+                            referencias[i] = nuevaPrenda;
+                            insertado = true;
+                            System.out.println("¡Prenda '" + nuevaPrenda + "' agregada con éxito!");
+                            break; 
+                            // Salimos del ciclo para no insertarla en las demás casillas vacías
+                        }
+                    }
+
+                    if (!insertado) {
+                        System.out.println("El inventario está lleno. No se pueden agregar más referencias.");
+                    }
                     break;
+
+
                 case 4 :
                      System.out.println("Gracias por elegirnos \n Un feliz día ");
                     break;
@@ -52,8 +80,19 @@ public class App {
 
             } while (opcion != 4);
 
-
+            sc.close();
     }
+
+    // Función para buscar la referencia en el arreglo
+    public static boolean buscarReferencia(String[] arreglo, String nombreRef) {
+        for (String ref : arreglo) {
+            if (ref != null) {
+                if (ref.equalsIgnoreCase(nombreRef)) {
+                    return true;
+                }
+            }
+        }
+        return false;
 
         
 }
