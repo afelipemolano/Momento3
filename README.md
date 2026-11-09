@@ -1,18 +1,20 @@
-## Getting Started
+# Momento 3 - Sistema de Gestión de Inventario (CHEVIGNON)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Información del Proyecto
+* **Asignatura:** Lógica de Programación
+* **Evaluación:** Momento 3
+* **Estudiante:** Andrés Felipe Molano
+* **Docente:** Santiago Yosa
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 📝 Descripción
+Programa de consola desarrollado en Java para la gestión básica de inventario de tiendas (referencias de prendas). El sistema implementa almacenamiento en arreglos de tamaño fijo, validación de valores nulos, ciclos interactivos y funciones estáticas auxiliares.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## ⚙️ Funcionalidades
+1. **Listar Referencias:** Muestra las prendas guardadas en el inventario de manera enumerada, omitiendo las posiciones vacías (`null`).
+2. **Buscar Referencia:** Permite consultar la disponibilidad de una prenda utilizando una función estática (`buscarReferencia`) que realiza la búsqueda sin diferenciar entre mayúsculas y minúsculas (`equalsIgnoreCase`).
+3. **Agregar Referencia:** Permite registrar una nueva prenda en la primera casilla disponible del arreglo (`null`). Si el arreglo está lleno, notifica al usuario.
+4. **Salir:** Finaliza la ejecución del sistema liberando los recursos de lectura.
