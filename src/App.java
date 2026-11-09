@@ -5,12 +5,29 @@ public class App {
 
         // Definir el arreglo con 5 entradas 
 
-        String[] referencias = {"Camisa Polo","Jean Levis","Tenis Adidas",null,null};
+        String[] referencias= {"Camisa Polo","Jean Levis","Tenis Adidas",null,null};
         int opcion = 0;
 
         // Llamar a Scanner para imprimir
 
         Scanner sc = new Scanner(System.in);
+
+        // Ciclo para el menú interactivo
+
+        do {
+            System.out.println("\n    Menú CHEVIGNON  \n");
+            System.out.println("1. Listar Referencias");
+            System.out.println("2. Buscar Referencia");
+            System.out.println("3. Agregar Referencia");
+            System.out.println("4. Salir \n");
+            System.out.println("Seleccione una opción: ");
+
+            opcion = sc.nextInt();
+            sc.nextLine();
+
+
+            } while (opcion != 4);
+
 
     }
 
